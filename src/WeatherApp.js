@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
+import "./WeatherApp.css"; // Import the CSS file
 
 const WeatherApp = () => {
-  const [city, setCity] = useState("New York"); // Default city
+  const [city, setCity] = useState("Falakata"); // Default city
   const [weather, setWeather] = useState(null); // State for weather data
   const [unit, setUnit] = useState("metric"); // "metric" for Celsius, "imperial" for Fahrenheit
   const [loading, setLoading] = useState(false); // Loading state
@@ -17,7 +18,7 @@ const WeatherApp = () => {
       return;
     }
 
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+    const API_KEY = "f3bfed24ca2d766e54782d801dd66369";
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city
     )}&units=${unit}&appid=${API_KEY}`;
@@ -80,7 +81,8 @@ const WeatherApp = () => {
           </p>
           <p>Humidity: {weather.main?.humidity || "N/A"}%</p>
           <p>
-            Wind Speed: {weather.wind?.speed || "N/A"} {unit === "metric" ? "m/s" : "mph"}
+            Wind Speed: {weather.wind?.speed || "N/A"}{" "}
+            {unit === "metric" ? "m/s" : "mph"}
           </p>
         </div>
       )}
