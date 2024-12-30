@@ -8,6 +8,8 @@ const WeatherApp = () => {
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
 
+
+
   const handleToggleUnit = () => {
     setUnit((prevUnit) => (prevUnit === "metric" ? "imperial" : "metric"));
   };
