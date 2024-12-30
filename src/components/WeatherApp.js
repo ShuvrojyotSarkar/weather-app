@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./WeatherApp.css"; // Import the CSS file
+import "./WeatherApp.css";   // Import the CSS file
 
 const WeatherApp = () => {
   const [city, setCity] = useState("Falakata"); // Default city
